@@ -17,7 +17,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
       && apt-get update && apt-get install -y yarn
 
 # Seta nosso path
-ENV INSTALL_PATH /nosso_amigo_secreto
+ENV INSTALL_PATH /amigo_secreto
 # Cria nosso diretório
 RUN mkdir -p $INSTALL_PATH
 # Seta o nosso path como o diretório principal

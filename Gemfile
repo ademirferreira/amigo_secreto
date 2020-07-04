@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
@@ -20,7 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem "rack", ">= 2.0.8"
+gem 'rack', '>= 2.0.8'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -36,9 +37,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-
-
-gem 'devise'
+gem 'devise', '~> 4.2'
 gem 'materialize-sass'
 gem 'material_icons'
 gem 'redis'
@@ -47,10 +46,9 @@ gem 'inky-rb', require: 'inky'
 gem 'premailer-rails'
 
 group :test do
-  gem "factory_bot_rails"
-  gem "ffaker"
+  gem 'factory_bot_rails'
+  gem 'ffaker'
 end
-
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
@@ -68,4 +66,4 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
